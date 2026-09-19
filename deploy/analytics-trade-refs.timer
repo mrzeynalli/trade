@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly reference metadata refresh for Global Trade Intelligence
+
+[Timer]
+OnCalendar=Sun *-*-* 04:20:00
+RandomizedDelaySec=30m
+Persistent=true
+Unit=analytics-trade-refs.service
+
+[Install]
+WantedBy=timers.target

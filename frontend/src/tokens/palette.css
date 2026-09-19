@@ -1,0 +1,80 @@
+/* Raw colour scales. Every value that existed in the product before the
+ * redesign is preserved at its exact hex; new steps extend those hues so the
+ * expanded chart palette still reads as the same family. */
+:root {
+  /* Neutral — warm graphite. n-25 is the paper the product is printed on;
+     n-1000 is the deepest ink, used for the skip link and print. */
+  --n-0: #ffffff;
+  --n-25: #fbfaf7;
+  --n-50: #f6f3ec;
+  --n-100: #f4f2ec;
+  --n-150: #efece4;
+  --n-200: #e4e0d8;
+  --n-300: #cfc9bd;
+  --n-400: #a8b0ab;
+  --n-500: #8a9691;
+  --n-600: #5c6b66;
+  --n-700: #3c4a45;
+  --n-800: #26332f;
+  --n-900: #16211e;
+  --n-950: #0d1614;
+  --n-1000: #07110f;
+
+  /* Teal-green — the brand hue. 800 and 600 are the original --green /
+     --green-mid; 50 is the original --green-wash. */
+  --teal-900: #16403a;
+  --teal-800: #24544c;
+  --teal-700: #2f6b60;
+  --teal-600: #3d7d70;
+  --teal-500: #4f9a89;
+  --teal-400: #6fb3a2;
+  --teal-300: #8fb3aa;
+  --teal-100: #d8e8e3;
+  --teal-50: #e7efec;
+
+  /* Indigo — the import / secondary hue. */
+  --indigo-900: #2d3488;
+  --indigo-800: #3f49b4;
+  --indigo-600: #5864de;
+  --indigo-500: #7b85e8;
+  --indigo-300: #a7aef0;
+  --indigo-100: #d8dbf8;
+  --indigo-50: #eceefb;
+
+  /* Coral — deficit, deterioration, error. */
+  --coral-800: #b03528;
+  --coral-600: #d8483b;
+  --coral-500: #e0705f;
+  --coral-400: #e08d84;
+  --coral-100: #f6d5d1;
+  --coral-50: #fbecea;
+
+  /* Amber — partial data, watch level, caution. 700 is the text-safe step. */
+  --amber-700: #8a5d12;
+  --amber-600: #c98a2e;
+  --amber-500: #d9a53f;
+  --amber-300: #e8c684;
+  --amber-50: #fbf2e2;
+
+  /* Cyan, violet, magenta, moss — categorical extensions added by the
+     redesign so a chart can carry eight series without reusing a hue. */
+  --cyan-700: #1c7796;
+  --cyan-600: #2b9cc4;
+  --cyan-300: #93cee4;
+  --cyan-50: #e4f2f8;
+
+  --violet-700: #5b3fb8;
+  --violet-600: #7a5be0;
+  --violet-300: #bfaef2;
+  --violet-50: #efeafc;
+
+  --magenta-700: #a83a6b;
+  --magenta-600: #cf4f88;
+  --magenta-300: #eaa7c4;
+  --magenta-50: #fbe9f1;
+
+  --moss-700: #43702c;
+  --moss-600: #5d9440;
+  --moss-300: #aecb96;
+  --moss-50: #ecf3e5;
+}

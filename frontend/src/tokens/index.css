@@ -1,0 +1,18 @@
+/* Analytics Observatory — design tokens.
+ *
+ * Both frontends carry an identical copy of this directory; change both
+ * together so they stay in sync.
+ *
+ * Import order matters: fonts, then the raw scales, then the semantic aliases
+ * that name them. There is no base/reset file here — each app's own
+ * styles.css carries the reset.
+ */
+@import "./fonts.css";
+@import "./palette.css";
+@import "./typography.css";
+@import "./spacing.css";
+@import "./radius.css";
+@import "./elevation.css";
+@import "./motion.css";
+@import "./charts.css";
+@import "./semantic.css";

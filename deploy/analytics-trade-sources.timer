@@ -1,0 +1,15 @@
+[Unit]
+Description=Daily secondary-source refresh for Global Trade Intelligence
+
+[Timer]
+# The IMF and Eurostat both publish on rolling monthly schedules rather than
+# fixed days, so this checks daily. Five requests in total, none of them
+# metered — it costs nothing and never competes with the Comtrade sync an
+# hour later.
+OnCalendar=*-*-* 02:40:00
+RandomizedDelaySec=25m
+Persistent=true
+Unit=analytics-trade-sources.service
+
+[Install]
+WantedBy=timers.target

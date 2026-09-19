@@ -1,0 +1,12 @@
+[Unit]
+Description=Nightly source-aware refresh for Global Trade Intelligence
+
+[Timer]
+# Low-traffic hour, with jitter so it does not align with every other job.
+OnCalendar=*-*-* 03:40:00
+RandomizedDelaySec=25m
+Persistent=true
+Unit=analytics-trade-sync.service
+
+[Install]
+WantedBy=timers.target

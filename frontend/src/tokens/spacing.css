@@ -1,0 +1,33 @@
+:root {
+  --space-0: 0;
+  --space-05: 2px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-18: 72px;
+  --space-24: 96px;
+
+  /* Composition rhythm the layouts are built on. */
+  --gutter-grid: 14px;
+  --gutter-grid-wide: 16px;
+  --pad-panel: 20px 22px 16px;
+  --pad-panel-body: 4px 22px 22px;
+  --pad-card: 20px 22px;
+  --pad-rail: 20px 14px 32px;
+  --pad-bar: 10px 26px;
+
+  --measure-shell: 1280px;
+  --measure-prose: 860px;
+  --measure-copy: 64ch;
+  --measure-lede: 58ch;
+  --rail-width: 248px;
+  --bar-height: 62px;
+}

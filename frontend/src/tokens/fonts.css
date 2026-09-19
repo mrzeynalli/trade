@@ -1,0 +1,12 @@
+/* Fonts.
+ *
+ * The design system ships a Google Fonts @import; production self-hosts the
+ * same upstream families through the @fontsource npm packages, which is what
+ * this file does instead. Source Serif 4 and Inter are variable cuts; IBM Plex
+ * Mono ships static weights, so only the three the system uses are loaded. */
+@import "@fontsource-variable/source-serif-4/opsz.css";
+@import "@fontsource-variable/source-serif-4/opsz-italic.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "@fontsource/ibm-plex-mono/600.css";

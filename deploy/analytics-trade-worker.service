@@ -1,0 +1,45 @@
+[Unit]
+Description=Global Trade Intelligence ingestion worker
+Documentation=https://analytics.mrzeynalli.xyz/trade/methodology
+After=network-online.target analytics-trade-api.service
+Wants=network-online.target
+
+[Service]
+Type=exec
+User=tradeapp
+Group=tradeapp
+WorkingDirectory=/opt/analytics-trade/backend
+EnvironmentFile=/etc/analytics-trade/trade.env
+# The only process permitted to contact UN Comtrade. It is never exposed
+# on a network port.
+ExecStart=/opt/analytics-trade/.venv/bin/python -m trade_api.worker
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=60
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=analytics-trade-worker
+
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+ReadWritePaths=/var/lib/analytics-trade
+CapabilityBoundingSet=
+MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

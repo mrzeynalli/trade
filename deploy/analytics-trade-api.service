@@ -1,0 +1,47 @@
+[Unit]
+Description=Global Trade Intelligence API (UN Comtrade analytics)
+Documentation=https://analytics.mrzeynalli.xyz/trade/methodology
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+User=tradeapp
+Group=tradeapp
+WorkingDirectory=/opt/analytics-trade/backend
+EnvironmentFile=/etc/analytics-trade/trade.env
+ExecStart=/opt/analytics-trade/.venv/bin/python -m uvicorn trade_api.app:app \
+    --host 127.0.0.1 --port 8092 --workers 2 --no-access-log --proxy-headers
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=20
+
+# Journald captures the structured JSON log lines.
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=analytics-trade-api
+
+# The service reads its code and writes only its data directory.
+NoNewPrivileges=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ProtectClock=true
+ProtectHostname=true
+RestrictSUIDSGID=true
+RestrictRealtime=true
+RestrictNamespaces=true
+LockPersonality=true
+MemoryDenyWriteExecute=false
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+SystemCallArchitectures=native
+ReadWritePaths=/var/lib/analytics-trade
+CapabilityBoundingSet=
+MemoryMax=1G
+
+[Install]
+WantedBy=multi-user.target

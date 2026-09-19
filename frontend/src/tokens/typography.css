@@ -1,0 +1,46 @@
+/* The @fontsource variable cuts register under "… Variable" family names, so
+ * those lead each stack; the plain names keep the system honest if the packages
+ * are ever swapped for self-hosted @font-face rules. */
+:root {
+  --font-serif: "Source Serif 4 Variable", "Source Serif 4", "Iowan Old Style", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter Variable", Inter, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* Display — serif, optical size raised, negative tracking. */
+  --type-display-1: 600 clamp(40px, 5.6vw, 68px)/0.99 var(--font-serif);
+  --type-display-2: 600 clamp(32px, 4.2vw, 50px)/1.02 var(--font-serif);
+  --type-display-3: 600 clamp(26px, 3.2vw, 38px)/1.06 var(--font-serif);
+  --type-title: 550 21px/1.15 var(--font-serif);
+  --type-title-sm: 550 17px/1.2 var(--font-serif);
+
+  /* Figures — serif for headline numbers, mono for codes and stamps. */
+  --type-figure-xl: 500 38px/1 var(--font-serif);
+  --type-figure-lg: 500 30px/1 var(--font-serif);
+  --type-figure-md: 500 23px/1 var(--font-serif);
+
+  /* Body + interface — sans. */
+  --type-body-lg: 400 17px/1.6 var(--font-sans);
+  --type-body: 400 15px/1.55 var(--font-sans);
+  --type-body-sm: 400 13.5px/1.55 var(--font-sans);
+  --type-ui: 500 13.5px/1.4 var(--font-sans);
+  --type-ui-sm: 500 12px/1.4 var(--font-sans);
+  --type-caption: 400 12.5px/1.5 var(--font-sans);
+  --type-micro: 400 11px/1.45 var(--font-sans);
+
+  /* Eyebrow / label — the product's signature all-caps micro type. */
+  --type-eyebrow: 640 10.5px/1.2 var(--font-sans);
+  --type-label: 640 9.5px/1.2 var(--font-sans);
+  --type-code: 500 11.5px/1.4 var(--font-mono);
+
+  --tracking-display: -0.028em;
+  --tracking-figure: -0.035em;
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0;
+  --tracking-eyebrow: 0.15em;
+  --tracking-label: 0.13em;
+
+  --opsz-display: 144;
+  --opsz-heading: 60;
+  --opsz-title: 40;
+  --opsz-figure: 72;
+}

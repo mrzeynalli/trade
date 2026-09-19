@@ -1,0 +1,27 @@
+[Unit]
+Description=Global Trade Intelligence source-aware refresh
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=tradeapp
+Group=tradeapp
+WorkingDirectory=/opt/analytics-trade/backend
+EnvironmentFile=/etc/analytics-trade/trade.env
+# Asks Comtrade what changed, then queues refreshes only for the affected
+# reporter/period partitions. It does not rebuild the cache.
+ExecStart=/opt/analytics-trade/.venv/bin/python -m trade_api.cli sync-updates
+TimeoutStartSec=1800
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=analytics-trade-sync
+
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/var/lib/analytics-trade
+CapabilityBoundingSet=

@@ -1,0 +1,17 @@
+:root {
+  --dur-tint: 140ms;    /* colour-only change: hover text, icon tint */
+  --dur-fast: 150ms;    /* segmented control, chips */
+  --dur-lift: 200ms;    /* card hover translate */
+  --dur-panel: 220ms;   /* off-canvas rail */
+  --dur-drawer: 260ms;  /* modal side panel */
+  --dur-grow: 420ms;    /* bar width, arc sweep */
+  --dur-spin: 800ms;
+  --dur-shimmer: 1600ms;
+
+  --ease-standard: ease;
+  --ease-emphasis: cubic-bezier(0.22, 0.8, 0.3, 1);
+  --ease-linear: linear;
+
+  --lift-card: translateY(-2px);
+  --press-scale: scale(0.985);
+}

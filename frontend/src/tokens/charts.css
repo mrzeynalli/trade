@@ -1,0 +1,59 @@
+/* Data-visualisation palette.
+ *
+ * Four families, used for four different jobs and never mixed:
+ *   series-*  categorical, unordered (products, drivers, regions)
+ *   seq-*     sequential, one hue, low to high (choropleths, magnitude)
+ *   div-*     diverging around zero (balance, net direction)
+ *   risk-*    the product's own five-band risk ramp, kept verbatim
+ *
+ * Order the series tokens as written: consecutive tokens are the pair most
+ * likely to sit next to each other, so they are the pair furthest apart in
+ * hue and lightness. */
+:root {
+  --series-1: var(--teal-800);
+  --series-2: var(--indigo-600);
+  --series-3: var(--amber-600);
+  --series-4: var(--magenta-600);
+  --series-5: var(--cyan-600);
+  --series-6: var(--violet-600);
+  --series-7: var(--moss-600);
+  --series-8: var(--coral-600);
+  --series-9: var(--teal-300);
+  --series-10: var(--indigo-300);
+
+  --series-1-wash: var(--teal-50);
+  --series-2-wash: var(--indigo-50);
+  --series-3-wash: var(--amber-50);
+  --series-4-wash: var(--magenta-50);
+  --series-5-wash: var(--cyan-50);
+  --series-6-wash: var(--violet-50);
+  --series-7-wash: var(--moss-50);
+  --series-8-wash: var(--coral-50);
+
+  --seq-1: #e7efec;
+  --seq-2: #c3ded5;
+  --seq-3: #95c5b8;
+  --seq-4: #5fa494;
+  --seq-5: #35786a;
+  --seq-6: #1c4a42;
+
+  --div-neg-2: var(--coral-800);
+  --div-neg-1: var(--coral-400);
+  --div-zero: var(--n-150);
+  --div-pos-1: var(--teal-300);
+  --div-pos-2: var(--teal-800);
+
+  --risk-stable: #24544c;
+  --risk-watch: #3d7d70;
+  --risk-elevated: #c98a2e;
+  --risk-high: #d8483b;
+  --risk-critical: #b03528;
+
+  --chart-grid: var(--n-200);
+  --chart-axis: var(--n-500);
+  --chart-axis-label: var(--n-500);
+  --chart-no-data: var(--n-150);
+  --chart-marker-stroke: var(--n-0);
+  --chart-band: rgba(88, 100, 222, 0.08);
+  --chart-crosshair: var(--n-300);
+}

@@ -1,0 +1,53 @@
+/* Semantic aliases. Components reference only these, never a raw scale, so a
+ * palette change never reaches into a component. */
+:root {
+  --surface-page: var(--n-25);
+  --surface-card: var(--n-0);
+  --surface-sunk: var(--n-100);
+  --surface-rail: var(--n-50);
+  --surface-overlay: var(--n-0);
+  --surface-bar: rgba(251, 250, 247, 0.9);
+
+  --text-strong: var(--n-900);
+  --text-body: var(--n-700);
+  --text-muted: var(--n-600);
+  --text-faint: var(--n-500);
+  --text-invert: var(--n-0);
+  --text-link: var(--teal-800);
+  --text-link-hover: var(--teal-600);
+
+  --border-hairline: var(--n-200);
+  --border-strong: var(--n-300);
+  --border-focus: var(--indigo-600);
+
+  --accent: var(--teal-800);
+  --accent-mid: var(--teal-600);
+  --accent-wash: var(--teal-50);
+  --accent-contrast: var(--n-0);
+
+  /* Trade flows — fixed across every view, always paired with a word. */
+  --flow-export: var(--teal-800);
+  --flow-export-wash: var(--teal-50);
+  --flow-import: var(--indigo-600);
+  --flow-import-wash: var(--indigo-50);
+  --flow-surplus: var(--teal-800);
+  --flow-deficit: var(--coral-600);
+
+  /* Status */
+  --status-live: var(--teal-600);
+  --status-live-wash: var(--teal-50);
+  --status-partial: var(--amber-700);
+  --status-partial-wash: var(--amber-50);
+  --status-error: var(--coral-600);
+  --status-error-wash: var(--coral-50);
+  --status-info: var(--indigo-800);
+  --status-info-wash: var(--indigo-50);
+
+  /* Coverage confidence — the observatory's three-level indicator. */
+  --confidence-high: var(--teal-800);
+  --confidence-high-wash: var(--teal-50);
+  --confidence-medium: var(--amber-700);
+  --confidence-medium-wash: var(--amber-50);
+  --confidence-low: var(--coral-800);
+  --confidence-low-wash: var(--coral-50);
+}

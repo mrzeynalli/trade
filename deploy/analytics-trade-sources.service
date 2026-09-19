@@ -1,0 +1,25 @@
+[Unit]
+Description=Global Trade Intelligence secondary-source refresh (IMF, Eurostat)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=tradeapp
+Group=tradeapp
+WorkingDirectory=/opt/analytics-trade/backend
+EnvironmentFile=/etc/analytics-trade/trade.env
+# Both are free, unmetered sources; neither touches the Comtrade budget.
+ExecStart=/opt/analytics-trade/.venv/bin/python -m trade_api.cli refresh-imf
+ExecStart=/opt/analytics-trade/.venv/bin/python -m trade_api.cli refresh-eurostat
+TimeoutStartSec=900
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=analytics-trade-sources
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_INET AF_INET6 AF_UNIX
+ReadWritePaths=/var/lib/analytics-trade
+CapabilityBoundingSet=
